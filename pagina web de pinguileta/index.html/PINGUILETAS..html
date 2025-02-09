@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pinguiletas - Paletas para Diabéticos</title>
+    <style>
+        body {
+            font-family: Arial , sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            color: black;
+        }
+
+      
+        header {
+            background-color: black;
+            color: white;
+            padding: 1em;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+div{
+            background-image:url();
+            background-repeat: no-repeat;
+            background-attachment:fixed;
+            background-size: 100% 100%;
+            color: #FFFFFF;
+        }
+
+
+        header img {
+            width: 200px;
+            height: auto;
+            vertical-align: middle;
+            margin-right: 100px;
+        }
+        
+       
+        nav a {
+            color: white;
+            margin: 0 1em;
+            text-decoration: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 2em;
+        }
+
+        .section {
+            margin-bottom: 2em;
+        }
+
+        .productos, .carrito, .contacto, .promociones {
+            display: none;
+        }
+
+        .producto, .promocion {
+            border: 1px solid #cccc;
+            padding: 1em;
+            text-align: center;
+            width: 200px;
+            margin-bottom: 1em;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .producto img, .promocion img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .producto:hover, .promocion:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-list, .promocion-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1em;
+            justify-content: space-around;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 1em;
+        }
+
+        .contact-info a {
+            margin: 0.5em 0;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: black;
+            transition: transform 0.3s, color 0.3s;
+        }
+
+        .contact-info img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            transition: transform 0.3s;
+        }
+
+        .contact-info a:hover {
+            transform: scale(1.1);
+            color: darkgrey;
+        }
+
+        .contact-info img:hover {
+            transform: scale(1.2);
+        }
+
+        footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            position: relative;
+            width: 100%;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1em;
+        }
+
+        .cart-item img {
+            width: 50px;
+            height: auto;
+            margin-right: 10px;
+        }
+
+        .cart-item button {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .cart-item button:hover {
+            background-color: darkred;
+        }
+
+        .cart-dropdown {
+            display: none;
+            border: 1px solid #ccc;
+            padding: 1em;
+            background-color: white;
+            position: absolute;
+            top: 50px;
+            right: 50px;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .cart-dropdown.open {
+            display: block;
+        }
+
+        #cart-button {
+            display: none;
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-bottom: 1em;
+        }
+
+        #cart-button:hover {
+            background-color: darkgray;
+        }
+
+        .checkout-button rect {
+           width: 100%;
+           height: 100%;
+           stroke:black;#000;
+           stroke-width: 10px;
+           stroke-dashrray: 50;
+           stroke-dashoffset: 50;
+
+        }
+
+        .checkout-button:hover {
+            background-color: darkgreen;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><img src="imagenes/logo.jpg" alt="Logo de Pinguiletas"> Pinguiletas</h1>
+        <nav>
+            <a href="#" data-section="inicio">Inicio</a>
+            <a href="#" data-section="productos">Productos</a>
+            <a href="#" data-section="promociones">Promociones</a>
+            <a href="#" data-section="carrito">Carrito</a>
+            <a href="#" data-section="contacto">Contacto</a>
+        </nav>
+    </header>
+    <main>
+        <section id="inicio" class="section">
+            <h2>Bienvenido a Pinguiletas</h2>
+            <p>Bienvenido a Pinguiletas, tu tienda en línea de paletas para diabéticos. Aquí puedes encontrar una variedad de paletas saludables y deliciosas.</p>
+            <h3>Nuestra Historia</h3>
+            <p>     El origen de las pingüiletas se inició a principios del año 2024, debido a que en mi familia la mayoría son personas que sufren de diabetes, pude observar que ellas no pueden consumir paletas de hielos normales, ya que llevan demasiados azúcares que dañan su cuerpo y les elva la glucosa creando asi un riesgo a y les afecta la salud y con ello limitarse a disfrutar de sabores refrescantes.
+
+     Por ello nació la idea de crear paletas naturales sin azúcares añadidas, para así mismo hacer que esas personas disfruten de algo refrescante y saludable sin afectar la salud de las personas que sufren diabetes
+
+.</p>
+     <hr style="width:90%; height:10px; background-color:rgb(12,183,242);margin-left: 0pt;">
+
+            <h3>Misión</h3>
+            <p>Crear paletas de sabores exquisitos sin azúcares refinadas; suaves y cremosas para ayuda de las personas con diabetes.</p>
+            <h3>Visión</h3>
+            <p>Nuestra visión: expandir la empresa a los grandes mercados y ser un producto de marca nacional manteniendo la misma calidad dentro del área de salud.</p>
+            <h3>¿Quiénes Somos?</h3>
+            <p>somos una empresa dedicada a satisfacer el gusto por un producto refrescante y delicioso para las personas diabeticas, con un producto 100% natural,libre de azucares refinadas.</p>
+            <h3>Valores</h3>
+            <ul>
+                <li>Responsabilidad:La responsabilidad es nuestro valor principal ya que tenemos la responsabilidad de entregar un producto apto para las personas diabéticas y sin ingredientes dañinos.</li>
+                <li>Respeto:El respeto no solo hacia los clientes sino también para con los empleados.</li>
+                <li>Compromiso:es cumplir con nuestro procedimiento asegurándonos de no poner en riesgo la salud de nuestros clientes.</li>
+                <li>Honestidad:Presentar nuestro producto siendo honestos en la fabricación de este y en la calidad que contiene.</li>
+                <li>empatia:entender y comprender los gustos de nuestros clientes para satisfacer el paladar de las personas diabéticas.</li>
+                <li>calidad:presentar un producto de calidad 100% natural que beneficie la salud de nuestro público.</li>
+                <li>integridad:formar transparencia al mostrar nuestro producto para que no haya desconfianza entre nuestros clientes.</li>
+                <li>pasión:mostrar a los clientes que tenemos pasión por nuestro producto.</li>
+            </ul>
+        </section>
+        <section id="productos" class="productos section">
+            <h2>Productos Destacados</h2>
+            <button id="cart-button">Ver Carrito</button>
+            <div class="cart-dropdown" id="cart-dropdown">
+                <h3>Carrito</h3>
+                <div id="cart-items"></div>
+                <p id="empty-cart">Tu carrito está vacío.</p>
+                <button class="checkout-button" onclick="alert('Función de pago no implementada')">Realizar Compra</button>
+            </div>
+            <div class="product-list">
+                <div class="producto" data-id="1" data-name="Paleta de Fresa" data-price="10">
+                    <img src="ruta/de/la/imagen1.jpg" alt="Paleta de Fresa">
+                    <h3>Paleta de Fresa</h3>
+                    <p>$17</p>
+                    <button>Añadir al Carrito</button>
+                </div>
+                <div class="producto" data-id="2" data-name="Paleta de jamaica" data-price="17">
+                    <img src="ruta/de/la/imagen2.jpg" alt="Paleta de jamaica">
+                    <h3>Paleta de jamaica</h3>
+                    <p>$18</p>
+                    <button>Añadir al Carrito</button>
+                </div>
+                <div class="producto" data-id="3" data-name="Paleta de manzana" data-price="12">
+                    <img src="ruta/de/la/imagen3.jpg" alt="Paleta de limon">
+                    <h3>Paleta de manzana</h3>
+                    <p>$12</p>
+                    <button>Añadir al Carrito</button>
+                </div>
+                <div class="producto" data-id="4" data-name="Paleta de aguacate" data-price="15">
+                    <img src="ruta/de/la/imagen4.jpg" alt="Paleta de aguacate">
+                    <h3>Paleta de aguacate</h3>
+                    <p>$15</p>
+                    <button>Añadir al Carrito</button>
+                </div>
+                <!-- Añadir más productos aquí -->
+            </div>
+        </section>
+        <section id="promociones" class="promociones section">
+            <h2>Promociones Especiales</h2>
+            <div class="promocion-list">
+                <div class="promocion" data-id="5" data-name="Combo de Verano" data-price="70">
+                    <img src="ruta/de/la/imagen5.jpg" alt="Combo de Verano">
+                    <h3>Combo de Verano</h3>
+                    <p>$70</p>
+                    <button>Añadir al Carrito</button>
+                </div>
+                <div class="promoción" data-id="6" data-name="Pack Familiar" data-price="40">
+                    <img src="ruta/de/la/imagen6.jpg" alt="Pack Familiar">
+                    <h3>Pack Familiar</h3>
+                    <p>$40</p>
+                    <button>Añadir al Carrito</button>
+                </div>
+                <!-- Añadir más promociones aquí -->
+            </div>
+        </section>
+        <section id="carrito" class="carrito section">
+            <h2>Tu Carrito</h2>
+            <div id="cart-items-list"></div>
+            <p id="empty-cart-message">Tu carrito está vacío.</p>
+            <button class="checkout-button" onclick="alert('Función de pago no implementada')">Realizar Compra</button>
+        </section>
+        <section id="contacto" class="contacto section">
+            <h2>Contacto</h2>
+            <div class="contact-info">
+                <a href="https://wa.me/529611026316" target="_blank">
+                    <img src="https://static.vecteezy.com/system/resources/previews/016/716/468/original/whatsapp-icon-free-png.png" alt="WhatsApp">
+                    WhatsApp
+                </a>
+                <a href="https://www.instagram.com/paletas_pinguiletas/" target="_blank">
+                    <img src="https://th.bing.com/th/id/OIP.Go2CQNhF_49tkKcpEl_sHQHaHZ?rs=1&amp;pid=ImgDetMain" alt="Instagram">
+                    Instagram
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61563870329795" target="_blank">
+                    <img src="https://cdn.icon-icons.com/icons2/91/PNG/512/facebook_16423.png" alt="Facebook">
+                    Facebook
+                </a>
+
+                <a href="https://x.com/pinguiletas0667" target="_blank">
+                    <img src="https://th.bing.com/th/id/OIP.Xn27U1Y5z0KR-wPnCt-v0QAAAA?rs=1&amp;pid=ImgDetMain" alt="x">
+                     x
+                </a>
+
+              
+       <p> Ubicación </p>
+             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d238.7838084585706!2d-93.11374908257152!3d16.749742035824127!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ecd88a36037dd3%3A0xca1d4115f97ec814!2sAv.%204a.%20Sur%20Ote.%20470%2C%20Asamblea%20de%20barrio%2C%20San%20Roque%2C%2029066%20Tuxtla%20Guti%C3%A9rrez%2C%20Chis.!5e0!3m2!1ses-419!2smx!4v1725178783007!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        </div></section>
+
+
+            
+        
+    </main>
+    <footer>
+        <p>© 2024 Pinguiletas. Todos los derechos reservados.</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('main .section');
+            const navLinks = document.querySelectorAll('nav a');
+            const cartButton = document.getElementById('cart-button');
+            const cartDropdown = document.getElementById('cart-dropdown');
+            const cartItems = document.getElementById('cart-items');
+            const emptyCart = document.getElementById('empty-cart');
+            const checkoutButton = document.querySelector('.checkout-button');
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    const sectionToShow = link.getAttribute('data-section');
+                    sections.forEach(section => {
+                        if (section.id === sectionToShow) {
+                            section.style.display = 'block';
+                        } else {
+                            section.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            const productos = document.querySelectorAll('.producto button');
+            productos.forEach(boton => {
+                boton.addEventListener('click', function() {
+                    const producto = boton.parentElement;
+                    const productoId = producto.getAttribute('data-id');
+                    const productoName = producto.getAttribute('data-name');
+                    const productoPrice = producto.getAttribute('data-price');
+
+                    const cartItem = document.createElement('div');
+                    cartItem.classList.add('cart-item');
+                    cartItem.setAttribute('data-id', productoId);
+                    cartItem.innerHTML = `
+                        <img src="${producto.querySelector('img').src}" alt="${productoName}">
+                        <span>${productoName}</span>
+                        <span>$${productoPrice}</span>
+                        <button>Eliminar</button>
+                    `;
+                    cartItems.appendChild(cartItem);
+                    cartButton.style.display = 'block';
+                    emptyCart.style.display = 'none';
+
+                    cartItem.querySelector('button').addEventListener('click', function() {
+                        cartItem.remove();
+                        if (cartItems.children.length === 0) {
+                            emptyCart.style.display = 'block';
+                            cartButton.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            cartButton.addEventListener('click', function() {
+                cartDropdown.classList.toggle('open');
+            });
+
+            checkoutButton.addEventListener('click', function() {
+                alert('Función de pago no implementada');
+            });
+        });
+    </script>
+
+
+
+</body></html>
